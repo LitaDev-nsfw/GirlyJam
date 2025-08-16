@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://62p466ms07kj"]
+
+[ext_resource type="Script" uid="uid://d0skw5ebhphdq" path="res://Scripts/Game/shelf.gd" id="1_qpjq1"]
+[ext_resource type="Texture2D" uid="uid://dtfqctrkenpq5" path="res://icon.svg" id="2_265fd"]
+
+[node name="Shelf" type="Node2D"]
+script = ExtResource("1_qpjq1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(6.05469, 0.359375)
+texture = ExtResource("2_265fd")
+centered = false
