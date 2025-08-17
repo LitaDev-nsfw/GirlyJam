@@ -1,9 +1,104 @@
-[gd_scene load_steps=3 format=3 uid="uid://2whn33hy8ohe"]
+[gd_scene load_steps=5 format=3 uid="uid://2whn33hy8ohe"]
 
 [ext_resource type="Script" uid="uid://dyrgi66uxrhva" path="res://Scripts/Game/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://62p466ms07kj" path="res://Scenes/Instanced Objects/shelf.tscn" id="2_8gbba"]
+[ext_resource type="Script" uid="uid://c0eowwdmnoico" path="res://Scenes/hand.gd" id="2_21xkr"]
+[ext_resource type="PackedScene" uid="uid://dlyj524hx7twf" path="res://Scenes/Instanced Objects/shelf_position.tscn" id="4_jjvhh"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_bo1nx")
 
-[node name="Shelf" parent="." instance=ExtResource("2_8gbba")]
+[node name="Hand" type="Node2D" parent="." groups=["Hands"]]
+position = Vector2(104, 584)
+script = ExtResource("2_21xkr")
+
+[node name="Shelf" parent="." groups=["Shelves"] instance=ExtResource("2_8gbba")]
+position = Vector2(24, 400)
+
+[node name="ShelfPosition" parent="Shelf" instance=ExtResource("4_jjvhh")]
+position = Vector2(56, -72)
+shelf_position = 1
+
+[node name="ShelfPosition2" parent="Shelf" instance=ExtResource("4_jjvhh")]
+position = Vector2(152, -72)
+shelf_position = 2
+
+[node name="ShelfPosition3" parent="Shelf" instance=ExtResource("4_jjvhh")]
+position = Vector2(248, -72)
+shelf_position = 3
+
+[node name="ShelfPosition4" parent="Shelf" instance=ExtResource("4_jjvhh")]
+position = Vector2(344, -72)
+shelf_position = 4
+
+[node name="ShelfPosition5" parent="Shelf" instance=ExtResource("4_jjvhh")]
+position = Vector2(440, -72)
+shelf_position = 5
+
+[node name="ShelfPosition6" parent="Shelf" instance=ExtResource("4_jjvhh")]
+position = Vector2(536, -72)
+shelf_position = 6
+
+[node name="ShelfPosition7" parent="Shelf" instance=ExtResource("4_jjvhh")]
+position = Vector2(632, -72)
+shelf_position = 7
+
+[node name="ShelfPosition8" parent="Shelf" instance=ExtResource("4_jjvhh")]
+position = Vector2(728, -72)
+shelf_position = 8
+
+[node name="ShelfPosition9" parent="Shelf" instance=ExtResource("4_jjvhh")]
+position = Vector2(824, -72)
+shelf_position = 9
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(400, -16)
+points = PackedVector2Array(560, -16, 560, 1144)
+default_color = Color(0.241156, 0.241156, 0.241156, 1)
+
+[node name="Shelf2" parent="." groups=["Shelves"] instance=ExtResource("2_8gbba")]
+position = Vector2(1000, 400)
+player = 1
+
+[node name="ShelfPosition" parent="Shelf2" instance=ExtResource("4_jjvhh")]
+position = Vector2(56, -72)
+shelf_position = 1
+
+[node name="ShelfPosition2" parent="Shelf2" instance=ExtResource("4_jjvhh")]
+position = Vector2(152, -72)
+shelf_position = 2
+
+[node name="ShelfPosition3" parent="Shelf2" instance=ExtResource("4_jjvhh")]
+position = Vector2(248, -72)
+shelf_position = 3
+
+[node name="ShelfPosition4" parent="Shelf2" instance=ExtResource("4_jjvhh")]
+position = Vector2(344, -72)
+shelf_position = 4
+
+[node name="ShelfPosition5" parent="Shelf2" instance=ExtResource("4_jjvhh")]
+position = Vector2(440, -72)
+shelf_position = 5
+
+[node name="ShelfPosition6" parent="Shelf2" instance=ExtResource("4_jjvhh")]
+position = Vector2(536, -72)
+shelf_position = 6
+
+[node name="ShelfPosition7" parent="Shelf2" instance=ExtResource("4_jjvhh")]
+position = Vector2(632, -72)
+shelf_position = 7
+
+[node name="ShelfPosition8" parent="Shelf2" instance=ExtResource("4_jjvhh")]
+position = Vector2(728, -72)
+shelf_position = 8
+
+[node name="ShelfPosition9" parent="Shelf2" instance=ExtResource("4_jjvhh")]
+position = Vector2(824, -72)
+shelf_position = 9
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: 0"

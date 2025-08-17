@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlyj524hx7twf"]
+
+[ext_resource type="Script" uid="uid://dojdnnqsijptv" path="res://Scripts/Game/shelf_position.gd" id="1_fi46i"]
+[ext_resource type="Texture2D" uid="uid://djpc3drq7ke36" path="res://Assets/Sprites/Icons/shelf position temp.png" id="2_h6kk2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21xkr"]
+size = Vector2(80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bp64"]
+atlas = ExtResource("2_h6kk2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_344ge"]
+atlas = ExtResource("2_h6kk2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ynf5e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bp64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_344ge")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ShelfPosition" type="Area2D"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_fi46i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_21xkr")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ynf5e")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
